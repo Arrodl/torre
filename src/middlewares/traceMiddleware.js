@@ -3,7 +3,9 @@
 export default (storeAPI) => (next) => (action) => {
     const actualState = storeAPI.getState();
 
-    const resultState = next(action);
+    const actionResult = next(action);
+
+    const resultState = storeAPI.getState();
 
     const diff = Object.entries(resultState).reduce((ps, [k, v]) => {
         if (actualState[k] !== v) {

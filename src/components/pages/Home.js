@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 const Home = (props) => {
     const classes = useStyles();
 
-    const [username, setUsername] = useState("");
+    const [username, setUsername] = useState(process.env.NODE_ENV === 'production' ? "" : "alfonsoreynac");
 
     const searchUsernameOpportunities = (e) => {
         e.preventDefault();
@@ -53,7 +53,7 @@ const Home = (props) => {
                     <TextField
                         className={classes.textField}
                         autoComplete="on"
-                        autoCapitalize
+                        autoCapitalize="on"
                         label="username"
                         variant="outlined"
                         fullWidth
