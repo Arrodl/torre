@@ -3,5 +3,10 @@ export {
 } from './global';
 
 export {
-    retrieveUser
+    retrieveUser,
+    retrieveOpportunities
 } from './rest';
+
+export {
+    agregateOpportunities,
+} from './opportunities';

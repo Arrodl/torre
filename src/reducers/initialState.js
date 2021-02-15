@@ -6,5 +6,10 @@ export default () => ({
             loading: false,
             error: false,
         },
-    }
+    },
+    opportunities: {
+        data: [],
+        loading: false,
+        error: false,
+    },
 });

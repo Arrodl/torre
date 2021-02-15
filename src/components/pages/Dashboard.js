@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setGlobalAttribute } from '../../actions';
 import { retrieveUser } from '../../actions/rest';
-import { Profile } from '../modules';
+import { Opportunities, Profile } from '../modules';
 
 const drawerWidth = 400;
 
@@ -24,7 +24,10 @@ const useStyles = makeStyles((theme) => ({
         width: drawerWidth,
     },
     content: {
-        marginRight: -drawerWidth,
+        // marginRight: drawerWidth,
+        paddingRight: 15,
+        width: `calc(100vw - ${drawerWidth + 15}px)`,
+        paddingLeft: 15
     },
     drawerPaper: {
         display: 'flex',
@@ -52,7 +55,7 @@ const Dashboard = (props) => {
             dispatch(setGlobalAttribute({ key: 'username', value: username }));
             dispatch(retrieveUser(username));
         }
-    }, []);
+    }, [props.match.params.username]);
     
     if (info.loading) {
         return (
@@ -75,6 +78,7 @@ const Dashboard = (props) => {
     return (
         <div className={classes.root}>
             <main className={classes.content}>
+                <Opportunities history={props.history} />
             </main>
             <Drawer
                 className={classes.drawer}

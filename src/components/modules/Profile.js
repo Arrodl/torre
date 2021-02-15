@@ -22,7 +22,7 @@ const Profile = ({ data }) => {
 
     const {
         person,
-        personalityTraitsResults = [],
+        personalityTraitsResults = { analyses: [] },
     } = data;
 
     return (
@@ -50,7 +50,7 @@ const Profile = ({ data }) => {
                 const title = ptr.groupId.replace(/-/g, ' ').toUpperCase();
 
                 return (
-                    <Grid conainer style={{ width: '100%' }}>
+                    <Grid key={title} style={{ width: '100%' }}>
                         <Typography variant="body2" color="primary">{title}</Typography>
                         <LinearProgress variant="determinate" color="secondary" value={ptr.analysis * 10} />
                     </Grid>
