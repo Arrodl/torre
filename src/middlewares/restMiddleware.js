@@ -22,7 +22,7 @@ export default (storeAPI) => (next) => async (action) => {
 
             try {
                 const { data } = await axios.get(`/https://torre.bio/api/bios/${action.payload}`);
-    
+                console.log(data)
                 if (data) {
                     storeAPI.dispatch(setGlobalAttribute({
                         key: 'info',

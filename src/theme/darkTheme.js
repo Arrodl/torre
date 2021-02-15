@@ -4,37 +4,38 @@ const darkTheme = createMuiTheme({
     overrides: {
         MuiInputBase: {
             root: {
-                color: '#fff',
+                color: '#EBEBEB',
             },
             input: {
-                color: '#fff',
+                color: '#EBEBEB',
             }
         },
         MuiOutlinedInput: {
             notchedOutline: {
-                borderColor: '#fff'
+                borderColor: '#EBEBEB'
             }
         },
         MuiFormLabel: {
             root: {
-                color: '#fff'
+                color: '#EBEBEB'
             }
         },
         MuiFormControl: {
             root: {
-                borderColor: '#fff'
+                borderColor: '#EBEBEB'
             }
         }
     },
     palette: {
         background: {
-            default: '#27292d'
+            default: '#27292d',
+            paper: '#1F2124'
         },
         primary: {
-            light: '#FFFFFF',
-            main: '#FFFFFF',
-            contrastText: '#FFFFFF',
-            dark: '#ffffff'
+            light: '#EBEBEB',
+            main: '#EBEBEB',
+            contrastText: '#EBEBEB',
+            dark: '#EBEBEB'
         },
         secondary: {
             light: '#cddc39',
